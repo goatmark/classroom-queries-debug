@@ -1,3 +1,4 @@
+<%params%>
 <h1>
   List of all departments
 </h1>
@@ -37,15 +38,15 @@
   <% @departments.each do |department| %>
     <tr>
       <td>
-        <%= @department.id %>
+        <%= department.id %>
       </td>
 
       <td>
-        <%= @department.name %>
+        <%= department.name %>
       </td>
 
       <td>
-        <a href="/departments/<%= @department.id %>">
+        <a href="/departments/<%= department.id %>">
           Show details
         </a>
       </td>
