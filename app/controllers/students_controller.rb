@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
 
   def show
     the_id = params.fetch("path_id")
-    @student = Student.where({:id => the_id }).at(0)
+    @student = Student.all.where({:id => the_id }).at(0)
 
     render({ :template => "students/show" })
   end
@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
 
   def update
     the_id = params.fetch("path_id")
-    @student = Student.where({ :id => the_id }).at(0)
+    @student = Student.all.where({ :id => the_id }).at(0)
 
     @student.first_name = params.fetch("query_first_name")
     @student.last_name = params.fetch("query_last_name")
@@ -44,7 +44,7 @@ class StudentsController < ApplicationController
 
   def destroy
     the_id = params.fetch("path_id")
-    @student = Student.where({ :id => the_id }).at(0)
+    @student = Student.all.where({ :id => the_id }).at(0)
 
     @student.destroy
 
